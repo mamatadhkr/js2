@@ -1,0 +1,70 @@
+
+<html>
+<head>
+    <title>task 2</title>
+    <style>
+        .form {
+            background-color: #fce4ec; 
+            border-radius: 10px; 
+            padding: 30px;
+            width: fit-content;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        button {
+            background-color: #ff69b4; 
+            color: white;
+            padding: 10px 20px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            border: none;
+        }
+
+        button:hover {
+            background-color: #ff1493; 
+        }
+
+        input {
+            margin: 10px;
+            padding: 5px;
+            border-radius: 10px;
+            border-color: beige;
+        }
+    </style>
+</head>
+<body>
+
+    <form class="form" onsubmit="operation(event)">
+
+        <label for="textcolor"> Text Color:</label>
+        <input type="text" id="textcolor" name="textcolor"><br>
+
+        <label for="bgcolor">Background Color:</label>
+        <input type="text" id="bgcolor" name="bgcolor"><br>
+
+        <label for="content">Content:</label>
+        <input type="text" id="content" name="content"><br>
+
+        <button type="submit">Submit</button>
+
+        
+    </form>
+        <p id="result"></p>
+    <script>
+        function operation(event) {
+            event.preventDefault(); // Prevent form from refreshing page
+
+            let result = document.getElementById("result");
+            let color = document.getElementById("textcolor").value;
+            let bgcolor = document.getElementById("bgcolor").value;
+            let content = document.getElementById("content").value;
+
+            result.innerHTML = content;
+            result.style.color = color;
+            result.style.backgroundColor = bgcolor;
+        }
+    </script>
+</body>
+</html>
